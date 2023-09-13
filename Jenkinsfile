@@ -7,6 +7,8 @@ pipeline {
 
     stages {
         stage('Stage One') {
+            environment {                                             // Stage level variable
+            ENV_URL = "pipeline.google.com"
             steps {
                sh '''
                echo Hello World
