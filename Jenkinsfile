@@ -7,8 +7,6 @@ pipeline {
 
     stages {
         stage('Stage One') {
-            environment {                                             // Stage level variable
-            ENV_URL = "pipeline.google.com"
             steps {
                sh '''
                echo Hello World
@@ -18,12 +16,9 @@ pipeline {
             }
         }    
         stage('Stage Two') {
-            environment {
-                BATCH = "b55"
-            }
             steps {
                 sh "echo Stage Two demo "
-                sh "echo training batch is ${batch}"
+                
             }
         }
         stage('Stage Three') {
@@ -33,5 +28,5 @@ pipeline {
         }
     }
 }
-}
+
 
