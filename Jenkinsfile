@@ -9,7 +9,7 @@ pipeline {
         stage('Stage One') {
             environment {
                  ENV_URL = "stage.google.com"
-
+            }
             steps {
                sh '''
                echo Hello World
@@ -34,5 +34,5 @@ pipeline {
         }
     }
 }
-}
+
 
