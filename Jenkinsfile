@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        ENV_URL = "pipeline.google.com"
+        ENV_URL  = "pipeline.google.com"
+        SSH_CRED = credentials('SSH_CRED')
 
     }
 
@@ -15,6 +16,7 @@ pipeline {
                echo Hello World
                echo Welcome To  Jenkins
                echo Environment URL is ${ENV_URL}
+               env
                   '''
             }
         }    
