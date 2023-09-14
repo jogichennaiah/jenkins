@@ -28,6 +28,7 @@ pipeline {
                echo Welcome To  Jenkins
                echo Environment URL is ${ENV_URL}
                env
+               maven clean
                   '''
             }
         }    
