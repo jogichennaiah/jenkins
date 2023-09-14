@@ -21,18 +21,20 @@ pipeline {
         maven 'maven-3.8.6' 
     }
     stages {
-        stage('Stage One') {
-            environment {
-                 ENV_URL = "stage.google.com"
+        stage('Paralle Demo') {
+            parallel{ 
+                stage('Stage One') {
+                   environment {
+                      ENV_URL = "stage.google.com"
             }
             steps {
-               sh '''
-               echo Hello World
-               echo Welcome To  Jenkins
-               echo Environment URL is ${ENV_URL}
-               mvn -v
-               sleep 10
-                  '''
+                      sh '''
+                      echo Hello World
+                      echo Welcome To  Jenkins
+                      echo Environment URL is ${ENV_URL}
+                      mvn -v
+                      sleep 10
+                         '''
             }
         }    
         stage('Stage Two') {
@@ -49,6 +51,9 @@ pipeline {
             steps {
                 sh "echo Stage Three demo "
                 sh "sleep 50"
+                  }
+
+               }
 
             }
         }
