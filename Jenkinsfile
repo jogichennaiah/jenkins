@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+      label 'workstation'
+    }
     environment {
         ENV_URL  = "pipeline.google.com"
         SSH_CRED = credentials('SSH_CRED')
@@ -33,6 +35,7 @@ pipeline {
                       echo Welcome To  Jenkins
                       echo Environment URL is ${ENV_URL}
                       mvn -v
+                      hostname
                       sleep 10
                          '''
             }
