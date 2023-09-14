@@ -21,7 +21,7 @@ pipeline {
         maven 'maven-3.8.6' 
     }
     stages {
-        stage('Paralle Demo') {
+        stage('Parallel Demo') {
             parallel{ 
                 stage('Stage One') {
                    environment {
