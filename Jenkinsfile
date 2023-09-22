@@ -9,7 +9,7 @@ pipeline {
     }
 
     triggers {
-         cron('46 24 * * *')
+         cron('48 23 * * *')
     }
 
     parameters {
