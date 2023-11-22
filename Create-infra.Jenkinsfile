@@ -19,7 +19,7 @@ pipeline {
 
         stage('Terraform Create ALB') {
             steps {
-                git branch: 'main', url: 'https://github.com/jogichennaiah/terraform-loadbalancers.git'
+                git branch: 'main', url: 'https://github.com/jogichennaiah/terraform-loadbalancer.git'
                         sh "terrafile -f env-${ENV}/Terrafile"
                         sh "terraform init --backend-config=env-${ENV}/${ENV}-backend.tfvars -reconfigure"
                         sh "terraform plan -var-file=env-${ENV}/${ENV}.tfvars"
